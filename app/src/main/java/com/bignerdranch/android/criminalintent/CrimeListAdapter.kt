@@ -30,6 +30,13 @@ class CrimePoliceHolder(
     fun bind(crime: Crime) {
         binding.crimeTitle.text = crime.title
         binding.crimeDate.text = crime.date.toString()
+        binding.root.setOnClickListener {
+            Toast.makeText(
+                binding.root.context,
+                "${crime.title} clicked!",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
         binding.contactPoliceButton.setOnClickListener {
             Toast.makeText(
                 binding.root.context,
